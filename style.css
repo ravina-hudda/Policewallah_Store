@@ -191,7 +191,24 @@ body {
   gap: 18px;
   padding: 20px;
 }
+@media (max-width: 1024px) {
+  .products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
+/* Mobile – FORCE 3 ITEMS */
+@media (max-width: 768px) {
+  .products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Very small phones only */
+@media (max-width: 420px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
 .product {
   background: rgba(255,255,255,0.95);
@@ -283,5 +300,6 @@ footer {
     font-size: 26px;
   }
 }
+
 
 
