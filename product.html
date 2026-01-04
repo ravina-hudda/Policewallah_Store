@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Product Details</title>
+<span class="rp-badge">Rajasthan Police</span>
+
+<style>
+body {
+    font-family: Arial;
+    background: #f2f2f2;
+    padding: 20px;
+}
+
+.box {
+    background: white;
+    padding: 20px;
+    max-width: 500px;
+    margin: auto;
+    border-radius: 10px;
+    text-align: center;
+}
+
+img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+}
+
+button {
+    background: green;
+    color: white;
+    padding: 12px;
+    border: none;
+    width: 100%;
+    margin-top: 15px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<p><a href="index.html">Home</a> → Product</p>
+<button onclick="history.back()">← Back</button>
+
+<div class="box">
+    <img id="img">
+    <h2 id="name"></h2>
+    <p id="desc"></p>
+    <p><b>Price:</b> <span id="price"></span></p>
+    <p><b>Size:</b> <span id="size"></span></p>
+
+    <button onclick="order()">Order on WhatsApp</button>
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const name = params.get("name");
+const desc = params.get("desc");
+const img = params.get("img");
+const price = params.get("price");
+const size = params.get("size");
+
+document.getElementById("name").innerText = name;
+document.getElementById("desc").innerText = desc;
+document.getElementById("img").src = img;
+document.getElementById("price").innerText = price;
+document.getElementById("size").innerText = size;
+
+function order() {
+    let phone = "917340249393";
+    let msg = `Hello, I want to order:\n${name}\nPrice: ${price}\nSize: ${size}`;
+    window.open("https://wa.me/" + phone + "?text=" + encodeURIComponent(msg));
+}
+</script>
+
+</body>
+</html>

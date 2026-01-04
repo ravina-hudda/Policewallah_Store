@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Policewallah Store</title>
+<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<script>
+function toggleMenu() {
+  const menu = document.getElementById("mobileMenu");
+  if (menu.style.display === "block") {
+    menu.style.display = "none";
+  } else {
+    menu.style.display = "block";
+  }
+}
+</script>
+
+
+<body>
+
+<!-- TOP HEADER -->
+<div class="top-bar">
+  <div class="top-left">
+    <a href="index.html">
+      <img src="images/logo.jpeg" alt="Policewallah Store" class="top-logo">
+    </a>
+
+  </div>
+
+  <div class="top-right">
+    <!-- Desktop icons -->
+    <div class="desktop-icons">
+              <a href="about.html">About Us</a>
+  <a href="contact.html">Contact Us</a>
+        📞 +91 7340249393
+      <a href="https://www.instagram.com/policewallah_saman/" target="_blank">
+        <img src="images/insta.png" class="icon">
+      </a>
+      <a href="https://wa.me/917340249393" target="_blank">
+        <img src="images/wtsp.png" class="icon">
+      </a>
+    </div>
+
+    <!-- Hamburger -->
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+  </div>
+</div>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="about.html">About Us</a>
+  <a href="contact.html">Contact Us</a>
+  <a href="https://www.instagram.com/policewallah_saman/" target="_blank">Instagram</a>
+  <a href="https://wa.me/917340249393" target="_blank">WhatsApp</a>
+</div>
+
+
+<section class="hero-clean">
+  <h1>Policewallah Store</h1>
+  <p class="hero-tagline">
+    Authorized Rajasthan Police Uniform & Accessories Store
+  </p>
+  <p class="hero-quote">
+    Duty • Discipline • Service
+  </p>
+
+  <a href="https://wa.me/917340249393" class="hero-btn">
+    Order on WhatsApp
+  </a>
+</section>
+
+
+<div class="trust-strip">
+  ✔ Official Rajasthan Police Items &nbsp; | &nbsp;
+  ✔ All India Delivery &nbsp; | &nbsp;
+  ✔ Direct WhatsApp Order
+</div>
+
+
+<div class="search-section">
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search for products..." onkeyup="searchProducts()">
+  </div>
+
+  <div class="filter">
+    <button onclick="filterCategory('all')">All</button>
+    <button onclick="filterCategory('cap')">Caps</button>
+    <button onclick="filterCategory('shoes')">Shoes</button>
+    <button onclick="filterCategory('uniform')">Uniform</button>
+    <button onclick="filterCategory('accessory')">Accessories</button>
+  </div>
+</div>
+
+
+<div class="products" id="products">
+
+<!-- CAPS & BADGES -->
+<div class="product" data-name="v cap" data-category="cap">
+<img src="images/v-cap.png">
+<h3>V Cap</h3>
+<button onclick="openProduct('V Cap','Rajasthan Police standard V Cap','images/v-cap.jpg','Ask for price','Free Size')">View Details</button>
+</div>
+
+<div class="product" data-name="round cap brown" data-category="cap">
+<img src="images/round-cap.jpeg">
+<h3>Round Cap (Brown)</h3>
+<button onclick="openProduct('Round Cap Brown','Brown round police cap','images/round-cap.jpg','Ask for price','Free Size')">View Details</button>
+</div>
+
+<div class="product" data-name="cap badge rajasthan police" data-category="accessory">
+<img src="images/cap-badge.jpeg">
+<h3>Cap Badge (Rajasthan Police)</h3>
+<button onclick="openProduct('Cap Badge','Original Rajasthan Police cap badge','images/cap-badge.jpg','Ask for price','Standard')">View Details</button>
+</div>
+
+<div class="product" data-name="shoulder badge rajasthan police" data-category="accessory">
+<img src="images/shoulder-badge.jpeg">
+<h3>Shoulder Badge Logo</h3>
+<button onclick="openProduct('Shoulder Badge','Rajasthan Police shoulder badge','images/shoulder-badge.jpg','Ask for price','Standard')">View Details</button>
+</div>
+
+<!-- WHISTLE & DORI -->
+<div class="product" data-name="whistle dori brown" data-category="accessory">
+<img src="images/dori-brown.jpeg">
+<h3>Whistle Dori Brown</h3>
+<button onclick="openProduct('Whistle Dori Brown','Brown whistle dori for police','images/dori-brown.jpg','Ask for price','Standard')">View Details</button>
+</div>
+
+<div class="product" data-name="whistle dori dark brown" data-category="accessory">
+<img src="images/dori-dark.jpeg">
+<h3>Whistle Dori Dark Brown</h3>
+<button onclick="openProduct('Whistle Dori Dark Brown','Dark brown khaki peeli dori','images/dori-dark.jpg','Ask for price','Standard')">View Details</button>
+</div>
+
+<div class="product" data-name="whistle plastic" data-category="accessory">
+<img src="images/whistle-plastic.jpeg">
+<h3>Whistle (Plastic)</h3>
+<button onclick="openProduct('Plastic Whistle','Plastic police whistle','images/whistle-plastic.jpg','Ask for price','Standard')">View Details</button>
+</div>
+
+<div class="product" data-name="whistle steel" data-category="accessory">
+<img src="images/whistle-steel.jpeg">
+<h3>Whistle (Steel)</h3>
+<button onclick="openProduct('Steel Whistle','Steel whistle for duty','images/whistle-steel.jpg','Ask for price','Standard')">View Details</button>
+</div>
+
+<!-- BELTS -->
+<div class="product" data-name="buckle jhalawar" data-category="accessory">
+<img src="images/buckle.jpeg">
+<h3>Buckle – Jhalawar</h3>
+<button onclick="openProduct('Buckle Jhalawar','Police belt buckle jhalawar type','images/buckle.jpg','Ask for price','Standard')">View Details</button>
+</div>
+
+<div class="product" data-name="buckle padmini" data-category="accessory">
+<img src="images/buckle.jpeg">
+<h3>Buckle – Padmini</h3>
+<button onclick="openProduct('Buckle Padmini','Police belt buckle padmini type','images/buckle.jpg','Ask for price','Standard')">View Details</button>
+</div>
+
+<div class="product" data-name="leather belt kadhiwala" data-category="accessory">
+<img src="images/belt.jpeg">
+<h3>Leather Belt (Kadhiwala)</h3>
+<button onclick="openProduct('Leather Belt Kadhiwala','Strong leather police belt','images/belt.jpg','Ask for price','Free Size')">View Details</button>
+</div>
+
+<div class="product" data-name="sooti nylon belt" data-category="accessory">
+<img src="images/nylon-belt.jpeg">
+<h3>Sooti Nylon Belt</h3>
+<button onclick="openProduct('Sooti Nylon Belt','Nylon belt for police use','images/nylon-belt.jpg','Ask for price','Free Size')">View Details</button>
+</div>
+
+<div class="product" data-name="frogi nylon belt" data-category="accessory">
+<img src="images/nylon-belt.jpeg">
+<h3>Frogi Nylon Belt</h3>
+<button onclick="openProduct('Frogi Nylon Belt','Frogi style nylon belt','images/nylon-belt.jpg','Ask for price','Free Size')">View Details</button>
+</div>
+
+<div class="product" data-name="sooti khaki anklet" data-category="accessory">
+<img src="images/anklet.png">
+<h3>Sooti Khaki Anklet</h3>
+<button onclick="openProduct('Sooti Khaki Anklet','Khaki anklet for police uniform','images/anklet.jpg','Ask for price','Standard')">View Details</button>
+</div>
+
+<!-- SHOES -->
+<div class="product" data-name="black shoes tsf" data-category="shoes">
+<img src="images/black shoes tsf.jpeg">
+<h3>Black Shoes – TSF</h3>
+<button onclick="openProduct('Black Shoes TSF','TSF black police shoes','images/shoes.jpg','Ask for price','6–10')">View Details</button>
+</div>
+
+<div class="product" data-name="black shoes zoom" data-category="shoes">
+<img src="images/black shoes zoom.png">
+<h3>Black Shoes – Zoom</h3>
+<button onclick="openProduct('Black Shoes Zoom','Zoom black police shoes','images/shoes.jpg','Ask for price','6–10')">View Details</button>
+</div>
+
+<div class="product" data-name="sega shoes" data-category="shoes">
+<img src="images/sega.png">
+<h3>Sega Shoes</h3>
+<button onclick="openProduct('Sega Shoes','Sega brand police shoes','images/shoes.jpg','Ask for price','6–10')">View Details</button>
+</div>
+
+<div class="product" data-name="red shoes tsf" data-category="shoes">
+<img src="images/shoes-red.png">
+<h3>Red Shoes – TSF</h3>
+<button onclick="openProduct('Red Shoes TSF','Red TSF shoes','images/shoes-red.jpg','Ask for price','6–10')">View Details</button>
+</div>
+
+<div class="product" data-name="red shoes zoom" data-category="shoes">
+<img src="images/shoes-red.png">
+<h3>Red Shoes – Zoom</h3>
+<button onclick="openProduct('Red Shoes Zoom','Red Zoom shoes','images/shoes-red.jpg','Ask for price','6–10')">View Details</button>
+</div>
+
+<!-- CLOTHING & UNIFORM -->
+<div class="product" data-name="sweater" data-category="uniform">
+<img src="images/sweater.png">
+<h3>Sweater</h3>
+<button onclick="openProduct('Sweater','Police duty sweater','images/sweater.jpg','Ask for price','S–XL')">View Details</button>
+</div>
+
+<div class="product" data-name="winter cap" data-category="cap">
+<img src="images/winter-cap.png">
+<h3>Winter Cap</h3>
+<button onclick="openProduct('Winter Cap','Winter cap for duty','images/winter-cap.jpg','Ask for price','Free Size')">View Details</button>
+</div>
+
+<div class="product" data-name="police jacket chamdiwala" data-category="uniform">
+<img src="images/jacket.png">
+<h3>Police Jacket (Chamdiwala)</h3>
+<button onclick="openProduct('Police Jacket Chamdiwala','Chamdiwala police jacket','images/jacket.jpg','Ask for price','S–XL')">View Details</button>
+</div>
+
+<div class="product" data-name="jacket jodhpur" data-category="uniform">
+<img src="images/jacket.png">
+<h3>Jacket – Jodhpur</h3>
+<button onclick="openProduct('Jacket Jodhpur','Jodhpur style police jacket','images/jacket.jpg','Ask for price','S–XL')">View Details</button>
+</div>
+
+<div class="product" data-name="jacket ganganagar" data-category="uniform">
+<img src="images/jacket.png">
+<h3>Jacket – Ganganagar</h3>
+<button onclick="openProduct('Jacket Ganganagar','Ganganagar police jacket','images/jacket.jpg','Ask for price','S–XL')">View Details</button>
+</div>
+
+<div class="product" data-name="jacket monte carlo" data-category="uniform">
+<img src="images/jacket.png">
+<h3>Jacket – Monte Carlo</h3>
+<button onclick="openProduct('Jacket Monte Carlo','Monte Carlo police jacket','images/jacket.jpg','Ask for price','S–XL')">View Details</button>
+</div>
+
+<div class="product" data-name="rac topi" data-category="cap">
+<img src="images/RAC-topi.jpeg">
+<h3>RAC Topi</h3>
+<button onclick="openProduct('RAC Topi','RAC police cap','images/rac-topi.jpg','Ask for price','Free Size')">View Details</button>
+</div>
+
+<div class="product" data-name="white chaddar" data-category="accessory">
+<img src="images/chaddar.png">
+<h3>White Chaddar</h3>
+<button onclick="openProduct('White Chaddar','White chaddar for duty','images/chaddar.jpg','Ask for price','Standard')">View Details</button>
+</div>
+
+<div class="product" data-name="steel thali glass chamach katori" data-category="accessory">
+<img src="images/steel-set.png">
+<h3>Steel Utensil Set</h3>
+<button onclick="openProduct('Steel Utensil Set','Thali, glass, chamach, katori','images/steel-set.jpg','Ask for price','Set')">View Details</button>
+</div>
+
+<div class="product" data-name="danda plastic" data-category="accessory">
+<img src="images/plastic danda.png">
+<h3>Danda (Plastic)</h3>
+<button onclick="openProduct('Plastic Danda','Plastic police danda','images/danda.jpg','Ask for price','Standard')">View Details</button>
+</div>
+
+<div class="product" data-name="danda wood" data-category="accessory">
+<img src="images/danda.png">
+<h3>Danda (Wood)</h3>
+<button onclick="openProduct('Wooden Danda','Wooden police danda','images/danda.jpg','Ask for price','Standard')">View Details</button>
+</div>
+
+<div class="product" data-name="police vardi" data-category="uniform">
+<img src="images/vardi.png">
+<h3>Police Vardi</h3>
+<button onclick="openProduct('Police Vardi','Complete Rajasthan Police uniform','images/vardi.jpg','Ask for price','S–XL')">View Details</button>
+</div>
+
+</div>
+
+
+<footer>
+    <p>📍 Jaipur | Jodhpur | Kota | Ajmer | Udaipur</p>
+    <p>📞 7340249393</p>
+    <p>© Policewallah Store</p>
+</footer>
+
+<script>
+function searchProducts() {
+    let input = document.getElementById("searchInput").value.toLowerCase();
+    let products = document.getElementsByClassName("product");
+
+    for (let i = 0; i < products.length; i++) {
+        let name = products[i].dataset.name;
+        products[i].style.display = name.includes(input) ? "block" : "none";
+    }
+}
+
+function filterCategory(cat) {
+    let products = document.getElementsByClassName("product");
+    for (let i = 0; i < products.length; i++) {
+        products[i].style.display =
+            cat === "all" || products[i].dataset.category === cat
+            ? "block" : "none";
+    }
+}
+
+function openProduct(name, desc, img, price, size) {
+    let url = `product.html?name=${encodeURIComponent(name)}&desc=${encodeURIComponent(desc)}&img=${encodeURIComponent(img)}&price=${encodeURIComponent(price)}&size=${encodeURIComponent(size)}`;
+    window.location.href = url;
+}
+</script>
+
+</body>
+</html>
