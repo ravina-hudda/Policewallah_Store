@@ -8,8 +8,6 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-
-  /* Tricolour background – subtle */
   background-image: url("images/tricolour-bg.png");
   background-repeat: repeat-y;
   background-position: top center;
@@ -17,11 +15,8 @@ body {
 }
 
 /* =====================================================
-   TOP BAR
+   TOP BAR (SINGLE LINE ALWAYS)
 ===================================================== */
-/* =========================
-   TOP HEADER (MOBILE FIRST)
-========================= */
 .top-bar {
   background-color: #1f6fae;
   color: white;
@@ -29,9 +24,9 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 10px 14px;
+  height: 56px;
 }
 
-/* Left side */
 .top-left {
   display: flex;
   align-items: center;
@@ -39,58 +34,74 @@ body {
 }
 
 .top-logo {
-  height: 28px;
+  height: 30px;
   width: auto;
 }
 
-/* Navigation links */
-.top-links {
-  display: none; /* hidden on mobile */
-}
-
-.top-links a {
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
-  margin-left: 10px;
-}
-
-/* Right icons */
 .top-right {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
+/* Desktop icons */
+.desktop-icons {
+  display: flex;
+  gap: 12px;
+}
+
 .icon {
   height: 22px;
-  width: auto;
 }
 
-/* =========================
-   DESKTOP VIEW
-========================= */
-@media (min-width: 768px) {
-  .top-links {
-    display: block;
-  }
+/* Hamburger */
+.hamburger {
+  font-size: 26px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: none;
 }
-
 
 /* =====================================================
-   HERO SECTION (CLEAN & PROFESSIONAL)
+   MOBILE MENU (DROPDOWN)
+===================================================== */
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 56px;
+  left: 0;
+  width: 100%;
+  background: #1f6fae;
+  z-index: 9999;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 14px;
+  color: white;
+  text-decoration: none;
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.mobile-menu a:hover {
+  background: #155a8a;
+}
+
+/* =====================================================
+   HERO SECTION
 ===================================================== */
 .hero-clean {
   background: linear-gradient(135deg, #0b3c5d, #1f6fae);
   color: white;
   text-align: center;
-  padding: 60px 20px;
+  padding: 40px 20px;
 }
 
 .hero-clean h1 {
-  font-size: 36px;
+  font-size: 32px;
   margin-bottom: 8px;
-  letter-spacing: 1px;
 }
 
 .hero-tagline {
@@ -115,10 +126,6 @@ body {
   text-decoration: none;
   font-size: 15px;
   font-weight: bold;
-}
-
-.hero-btn:hover {
-  background: #1ebe5d;
 }
 
 /* =====================================================
@@ -149,8 +156,6 @@ body {
 }
 
 .filter {
-  text-align: center;
-  margin-bottom: 10px;
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -160,16 +165,13 @@ body {
 
 .filter button {
   padding: 8px 18px;
-  margin: 5px;
   border-radius: 20px;
   border: 1px solid #1f6fae;
   background: white;
   color: #1f6fae;
-  font-weight: 500;
   cursor: pointer;
   white-space: nowrap;
 }
-
 
 .filter button:hover {
   background: #1f6fae;
@@ -187,16 +189,10 @@ body {
 }
 
 .product {
-  background-color: rgba(255, 255, 255, 0.95);
+  background: rgba(255,255,255,0.95);
   padding: 15px;
   border-radius: 8px;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.product:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
 }
 
 .product img {
@@ -209,17 +205,6 @@ body {
 
 .product h3 {
   margin: 10px 0 6px;
-  font-size: 16px;
-}
-
-.rp-badge {
-  display: inline-block;
-  margin-bottom: 8px;
-  font-size: 12px;
-  color: #155724;
-  background: #d4edda;
-  padding: 3px 8px;
-  border-radius: 4px;
 }
 
 .product button {
@@ -233,100 +218,9 @@ body {
   border-radius: 4px;
 }
 
-.product button:hover {
-  background: #0a8a0a;
-}
-
 /* =====================================================
-   CONTENT PAGES (ABOUT / CONTACT)
+   PRODUCT DETAIL PAGE
 ===================================================== */
-.page-container {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 25px;
-  background-color: rgba(255,255,255,0.95);
-  border-radius: 6px;
-}
-
-.page-container h1 {
-  margin-bottom: 20px;
-  color: #1f6fae;
-}
-
-.page-container p {
-  line-height: 1.6;
-  margin-bottom: 15px;
-}
-
-.center {
-  text-align: center;
-}
-
-/* =====================================================
-   CONTACT BUTTONS
-===================================================== */
-.contact-btn {
-  display: inline-block;
-  padding: 14px 24px;
-  margin: 12px;
-  text-decoration: none;
-  color: white;
-  font-size: 16px;
-  border-radius: 5px;
-}
-
-.whatsapp {
-  background-color: #25D366;
-}
-
-.instagram {
-  background-color: #E1306C;
-}
-
-/* =====================================================
-   FOOTER
-===================================================== */
-footer {
-  background: #222;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  margin-top: 40px;
-}
-
-/* =====================================================
-   MOBILE RESPONSIVE
-===================================================== */
-@media (max-width: 768px) {
-  .top-bar {
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-  }
-
-  .top-left,
-  .top-right {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .hero-clean h1 {
-    font-size: 28px;
-  }
-
-  .search-box input {
-    width: 90%;
-  }
-}
-.hero-clean {
-  padding: 40px 20px; /* instead of 60–70px */
-
-}
-
-/* =========================
-   PRODUCT DETAILS PAGE (MOBILE)
-========================= */
-
 .product-detail {
   max-width: 420px;
   margin: 20px auto;
@@ -343,18 +237,6 @@ footer {
   border-radius: 8px;
 }
 
-.product-detail h2 {
-  font-size: 20px;
-  margin: 10px 0;
-}
-
-.product-detail p {
-  font-size: 15px;
-  line-height: 1.5;
-  margin: 6px 0;
-}
-
-/* Sticky WhatsApp button on mobile */
 .mobile-order {
   position: fixed;
   bottom: 15px;
@@ -365,66 +247,34 @@ footer {
   z-index: 999;
 }
 
-/* =========================
-   HAMBURGER HEADER
-========================= */
-.hamburger {
-  font-size: 24px;
-  cursor: pointer;
-  display: block;
-}
-
-/* Icons */
-.icon {
-  height: 22px;
-}
-
-/* Desktop icons hidden on mobile */
-.desktop-icons {
-  display: none;
-}
-
-/* Mobile menu */
-.mobile-menu {
-  display: none;
-  background: #1f6fae;
+/* =====================================================
+   FOOTER
+===================================================== */
+footer {
+  background: #222;
+  color: white;
+  padding: 20px;
   text-align: center;
 }
 
+/* =====================================================
+   MOBILE RULES
+===================================================== */
+@media (max-width: 768px) {
 
-
-.mobile-menu a:hover {
-  background: #155a8a;
-}
-
-/* =========================
-   DESKTOP VIEW
-========================= */
-@media (min-width: 768px) {
-  .hamburger {
+  .desktop-icons {
     display: none;
   }
 
-  .desktop-icons {
-    display: flex;
-    gap: 12px;
+  .hamburger {
+    display: block;
   }
 
-  .mobile-menu {
-  display: none;
-  position: absolute;
-  top: 60px;              /* below header */
-  left: 0;
-  width: 100%;
-  background: #1f6fae;
-  z-index: 9999;
-}
-.mobile-menu a {
-  display: block;
-  padding: 14px;
-  color: white;
-  text-decoration: none;
-  border-top: 1px solid rgba(255,255,255,0.2);
-}
+  .search-box input {
+    width: 90%;
+  }
 
+  .hero-clean h1 {
+    font-size: 26px;
+  }
 }
