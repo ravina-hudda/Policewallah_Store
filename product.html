@@ -4,7 +4,8 @@
 <title>Product Details</title>
 <link rel="stylesheet" href="style.css">
 <span class="rp-badge">Rajasthan Police</span>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
 <style>
 body {
     font-family: Arial;
@@ -39,6 +40,41 @@ button {
 </head>
 
 <body>
+<!-- TOP HEADER -->
+<div class="top-bar">
+  <div class="top-left">
+    <a href="index.html">
+      <img src="images/logo.jpeg" alt="Policewallah Store" class="top-logo">
+    </a>
+
+  </div>
+
+  <div class="top-right">
+    <!-- Desktop icons -->
+    <div class="desktop-icons">
+              <a href="about.html">About Us</a>
+  <a href="contact.html">Contact Us</a> 
+        📞 +91 7340249393
+      <a href="https://www.instagram.com/policewallah_saman/" target="_blank">
+        <img src="images/insta.png" class="icon">
+      </a>
+      <a href="https://wa.me/917340249393" target="_blank">
+        <img src="images/wtsp.png" class="icon">
+      </a>
+    </div>
+
+    <!-- Hamburger -->
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+  </div>
+</div>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="about.html">About Us</a>
+  <a href="contact.html">Contact Us</a>
+  <a href="https://www.instagram.com/policewallah_saman/" target="_blank">Instagram</a>
+  <a href="https://wa.me/917340249393" target="_blank">WhatsApp</a>
+</div>
 
 <p><a href="index.html">Home</a> → Product</p>
 <button onclick="history.back()">← Back</button>
@@ -72,9 +108,18 @@ function order() {
     let msg = `Hello, I want to order:\n${name}\nPrice: ${price}\nSize: ${size}`;
     window.open("https://wa.me/" + phone + "?text=" + encodeURIComponent(msg));
 }
+    function toggleMenu() {
+  const menu = document.getElementById("mobileMenu");
+  if (menu.style.display === "block") {
+    menu.style.display = "none";
+  } else {
+    menu.style.display = "block";
+  }
+}
 </script>
 
 </body>
 </html>
+
 
 
