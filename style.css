@@ -1,5 +1,5 @@
 /* =====================================================
-   GLOBAL BASE
+   GLOBAL BASE + BACKGROUND
 ===================================================== */
 * {
   box-sizing: border-box;
@@ -15,16 +15,17 @@ body {
   background-size: cover;
   background-attachment: fixed;
 }
+
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   background: rgba(255,255,255,0.85);
-  z-index: -4;
+  z-index: -1;
 }
 
 /* =====================================================
-   TOP BAR (SINGLE LINE ALWAYS)
+   TOP BAR (SINGLE LINE)
 ===================================================== */
 .top-bar {
   background-color: #1f6fae;
@@ -32,8 +33,8 @@ body::before {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 14px;
   height: 56px;
+  padding: 0 14px;
 }
 
 .top-left {
@@ -44,7 +45,6 @@ body::before {
 
 .top-logo {
   height: 30px;
-  width: auto;
 }
 
 .top-right {
@@ -53,7 +53,6 @@ body::before {
   gap: 12px;
 }
 
-/* Desktop icons */
 .desktop-icons {
   display: flex;
   gap: 12px;
@@ -74,7 +73,7 @@ body::before {
 }
 
 /* =====================================================
-   MOBILE MENU (DROPDOWN)
+   MOBILE MENU
 ===================================================== */
 .mobile-menu {
   display: none;
@@ -99,7 +98,7 @@ body::before {
 }
 
 /* =====================================================
-   HERO SECTION
+   HERO
 ===================================================== */
 .hero-clean {
   background: linear-gradient(135deg, #0b3c5d, #1f6fae);
@@ -115,25 +114,21 @@ body::before {
 
 .hero-tagline {
   font-size: 15px;
-  opacity: 0.9;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .hero-quote {
   font-size: 14px;
   font-style: italic;
-  opacity: 0.85;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 }
 
 .hero-btn {
-  display: inline-block;
   background: #25D366;
   color: white;
   padding: 12px 26px;
   border-radius: 25px;
   text-decoration: none;
-  font-size: 15px;
   font-weight: bold;
 }
 
@@ -182,74 +177,92 @@ body::before {
   white-space: nowrap;
 }
 
-.filter button:hover {
-  background: #1f6fae;
-  color: white;
-}
-
 /* =====================================================
-   PRODUCTS GRID
+   PRODUCTS GRID (STABLE)
 ===================================================== */
-/* =====================================================
-   PRODUCTS GRID – FIXED COLUMNS
-===================================================== */
-
 .products {
   display: grid;
-  max-width: 1200px;   /* 👈 limits desktop stretch */
+  max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
   gap: 20px;
 
-  grid-template-columns: repeat(6, 1fr);
+  /* Desktop */
+  grid-template-columns: repeat(4, 1fr);
 }
+
+/* Tablet */
 @media (max-width: 1024px) {
   .products {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-/* Mobile – FORCE 3 ITEMS */
+/* Mobile – 3 items */
 @media (max-width: 768px) {
   .products {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-/* Very small phones only */
+/* Very small phones */
 @media (max-width: 420px) {
   .products {
     grid-template-columns: repeat(2, 1fr);
   }
+}
 
+/* =====================================================
+   PRODUCT CARD (DESKTOP FIRST)
+===================================================== */
 .product {
   background: rgba(255,255,255,0.95);
-  padding: 15px;
+  padding: 16px;
   border-radius: 8px;
   text-align: center;
 }
 
 .product img {
   width: 100%;
-  height: 160px;
+  height: 180px;
   object-fit: contain;
   background: #f8f8f8;
   border-radius: 6px;
 }
 
 .product h3 {
-  margin: 10px 0 6px;
+  font-size: 15px;
+  margin: 10px 0;
 }
 
 .product button {
-  margin-top: 10px;
+  font-size: 14px;
+  padding: 8px;
+  width: 100%;
+  border: none;
   background: green;
   color: white;
-  border: none;
-  padding: 10px;
-  width: 100%;
-  cursor: pointer;
   border-radius: 4px;
+}
+
+/* Mobile compact cards */
+@media (max-width: 768px) {
+  .product {
+    padding: 8px;
+  }
+
+  .product img {
+    height: 110px;
+  }
+
+  .product h3 {
+    font-size: 12px;
+  }
+
+  .product button {
+    font-size: 11px;
+    padding: 6px;
+  }
 }
 
 /* =====================================================
@@ -292,10 +305,9 @@ footer {
 }
 
 /* =====================================================
-   MOBILE RULES
+   MOBILE HEADER RULES
 ===================================================== */
 @media (max-width: 768px) {
-
   .desktop-icons {
     display: none;
   }
@@ -312,82 +324,3 @@ footer {
     font-size: 26px;
   }
 }
-
-   /* Default – DESKTOP */
-.product {
-  background: rgba(255,255,255,0.95);
-  padding: 14px;
-  border-radius: 8px;
-  text-align: center;
-}
-
-.product img {
-  width: 100%;
-  height: 170px;
-  object-fit: contain;
-  background: #f8f8f8;
-  border-radius: 6px;
-}
-
-.product h3 {
-  font-size: 15px;
-  margin: 8px 0;
-}
-
-.product button {
-  font-size: 14px;
-  padding: 8px;
-}
-@media (max-width: 768px) {
-  .product {
-    padding: 8px;
-  }
-
-  .product img {
-    height: 110px;
-  }
-
-  .product h3 {
-    font-size: 12px;
-  }
-
-  .product button {
-    font-size: 11px;
-    padding: 6px;
-  }
-}
-.products {
-  display: grid;
-  width: 100%;
-  max-width: 1400px;
-  margin: auto;
-  gap: 16px;
-  padding: 16px;
-
-  grid-template-columns: repeat(4, 1fr);
-}
-
-@media (max-width: 1024px) {
-  .products {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .products {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 420px) {
-  .products {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-
-
-
-
-
-
