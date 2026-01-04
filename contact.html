@@ -8,24 +8,40 @@
 
 <body>
 
-<!-- TOP BAR -->
+<!-- TOP HEADER -->
 <div class="top-bar">
   <div class="top-left">
     <a href="index.html">
-      <img src="images/logo.jpeg" class="top-logo" alt="Policewallah Saman">
+      <img src="images/logo.jpeg" alt="Policewallah Store" class="top-logo">
     </a>
-    <a href="about.html">About Us</a>
-    <a href="contact.html">Contact Us</a>
+
   </div>
 
   <div class="top-right">
-    <a href="https://wa.me/917340249393" target="_blank">
-      <img src="images/wtsp.png" class="top-logo" alt="WhatsApp">
-    </a>
-    <a href="https://www.instagram.com/policewallah_saman/" target="_blank">
-      <img src="images/insta.png" class="top-logo" alt="Instagram">
-    </a>
+    <!-- Desktop icons -->
+    <div class="desktop-icons">
+              <a href="about.html">About Us</a>
+  <a href="contact.html">Contact Us</a>
+        📞 +91 7340249393
+      <a href="https://www.instagram.com/policewallah_saman/" target="_blank">
+        <img src="images/insta.png" class="icon">
+      </a>
+      <a href="https://wa.me/917340249393" target="_blank">
+        <img src="images/wtsp.png" class="icon">
+      </a>
+    </div>
+
+    <!-- Hamburger -->
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
   </div>
+</div>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="about.html">About Us</a>
+  <a href="contact.html">Contact Us</a>
+  <a href="https://www.instagram.com/policewallah_saman/" target="_blank">Instagram</a>
+  <a href="https://wa.me/917340249393" target="_blank">WhatsApp</a>
 </div>
 
 <!-- PAGE CONTENT -->
@@ -53,3 +69,4 @@
 
 </body>
 </html>
+
