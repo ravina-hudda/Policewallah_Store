@@ -181,12 +181,38 @@ body {
 /* =====================================================
    PRODUCTS GRID
 ===================================================== */
+/* =====================================================
+   PRODUCTS GRID – FIXED COLUMNS
+===================================================== */
+
 .products {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(4, 1fr); /* desktop default */
   gap: 18px;
   padding: 20px;
 }
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Very small phones */
+@media (max-width: 420px) {
+  .products {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 .product {
   background: rgba(255,255,255,0.95);
@@ -278,3 +304,4 @@ footer {
     font-size: 26px;
   }
 }
+
