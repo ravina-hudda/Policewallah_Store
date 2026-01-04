@@ -6,7 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
-
+<script>
+function toggleMenu() {
+  const menu = document.getElementById("mobileMenu");
+  if (menu.style.display === "block") {
+    menu.style.display = "none";
+  } else {
+    menu.style.display = "block";
+  }
+}
+</script>
 <body>
 
 <!-- TOP HEADER -->
@@ -70,5 +79,6 @@
 
 </body>
 </html>
+
 
 
